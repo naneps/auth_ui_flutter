@@ -1,3 +1,5 @@
+import 'package:auth_ui_flutter/controllers/auth_controller.dart';
+import 'package:auth_ui_flutter/page/constant.dart';
 import 'package:auth_ui_flutter/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,35 +12,89 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool showPass = true;
+  AuthController authController = AuthController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kBackground,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text.rich(
+              TextSpan(
+                text: 'Selamat datang di Rumah Tahfidz Qur"an',
+                style: GoogleFonts.poppins(
+                  color: kFontColor,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              maxLines: 4,
+              // textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 70),
             Text(
               "Masuk",
               style: GoogleFonts.poppins(
-                  color: Colors.black,
-                  fontSize: 26,
-                  fontWeight: FontWeight.w600),
+                  color: kFontColor, fontSize: 26, fontWeight: FontWeight.w700),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             CustomTextField(
+              controller: authController.teleponeController,
+              inputType: TextInputType.phone,
               icon: Icons.phone,
               hintText: "Telepon",
               labelText: "Telepon",
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             CustomTextField(
+              controller: authController.passwordController,
+              obscureText: showPass,
               icon: Icons.lock,
-              suffIcon: Icon(Icons.visibility),
+              suffIcon: IconButton(
+                icon:
+                    Icon((showPass ? Icons.visibility_off : Icons.visibility)),
+                onPressed: () {
+                  setState(() {
+                    showPass = !showPass;
+                  });
+                },
+              ),
               hintText: "Kata Sandi",
               labelText: "Kata Sandi",
             ),
+            const SizedBox(height: 30),
+            const SizedBox(height: 20),
+            TextButton(
+                onPressed: () {
+                  // print(authController.teleponeController.text);
+                  authController
+                      .login(
+                          telepon: authController.teleponeController.text,
+                          pasword: authController.passwordController.text)
+                      ?.then((value) => print(value));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: kMainColor,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  alignment: Alignment.center,
+                  width: double.infinity,
+                  height: 50,
+                  child: Text(
+                    "Masuk!",
+                    style: GoogleFonts.poppins(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500),
+                    textAlign: TextAlign.center,
+                  ),
+                ))
           ],
         ),
       ),
