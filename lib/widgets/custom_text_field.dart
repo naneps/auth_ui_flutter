@@ -1,3 +1,4 @@
+import 'package:auth_ui_flutter/page/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,7 +10,7 @@ class CustomTextField extends StatelessWidget {
   TextEditingController? controller;
   IconData? icon;
   bool? obscureText;
-  TextInputType inputType = TextInputType.text;
+  TextInputType? inputType;
 
   CustomTextField({
     Key? key,
@@ -19,25 +20,37 @@ class CustomTextField extends StatelessWidget {
     this.errorText,
     this.icon,
     this.labelText,
+    this.inputType,
     this.obscureText,
   }) : super(key: key);
 
   Widget build(BuildContext context) {
     return TextField(
       obscureText: obscureText ?? false,
-      keyboardType: inputType,
+      keyboardType: inputType ?? TextInputType.text,
       controller: controller,
       style: GoogleFonts.poppins(
         color: Colors.black,
         fontSize: 16,
       ),
+      // selectionControls: TextSelectionControls(),
       decoration: InputDecoration(
+        suffixIconColor: kMainColor,
+
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: kMainColor),
+        ),
         // border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
         hintText: hintText,
         labelText: labelText,
         errorText: errorText,
         suffixIcon: suffIcon,
-        icon: icon != null ? Icon(icon) : null,
+        icon: icon != null
+            ? Icon(
+                icon,
+                color: kMainColor,
+              )
+            : null,
       ),
     );
   }
