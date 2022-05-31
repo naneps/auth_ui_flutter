@@ -10,10 +10,12 @@ class CustomTextField extends StatelessWidget {
   TextEditingController? controller;
   IconData? icon;
   bool? obscureText;
+  bool? readOnly;
   TextInputType? inputType;
 
   CustomTextField({
     Key? key,
+    this.readOnly,
     this.suffIcon,
     this.hintText,
     this.controller,
@@ -26,20 +28,16 @@ class CustomTextField extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return TextField(
+      readOnly: readOnly ?? false,
       obscureText: obscureText ?? false,
       keyboardType: inputType ?? TextInputType.text,
       controller: controller,
       style: GoogleFonts.poppins(
-        color: Colors.black,
+        color: kFontColor,
         fontSize: 16,
       ),
       // selectionControls: TextSelectionControls(),
       decoration: InputDecoration(
-        suffixIconColor: kMainColor,
-
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: kMainColor),
-        ),
         // border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
         hintText: hintText,
         labelText: labelText,
@@ -48,7 +46,7 @@ class CustomTextField extends StatelessWidget {
         icon: icon != null
             ? Icon(
                 icon,
-                color: kMainColor,
+                // color: kMainColor,
               )
             : null,
       ),
