@@ -12,9 +12,11 @@ class RegisterPage extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Masuk",
+              "Register",
               style: GoogleFonts.poppins(
                   color: kFontColor, fontSize: 26, fontWeight: FontWeight.w500),
             ),
@@ -41,6 +43,25 @@ class RegisterPage extends StatelessWidget {
               obscureText: true,
             ),
             SizedBox(height: 20),
+            TextButton(
+                onPressed: () {},
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: kMainColor,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  alignment: Alignment.center,
+                  width: double.infinity,
+                  height: 50,
+                  child: Text(
+                    "Sign Up!!",
+                    style: GoogleFonts.poppins(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500),
+                    textAlign: TextAlign.center,
+                  ),
+                ))
           ],
         ),
       ),
