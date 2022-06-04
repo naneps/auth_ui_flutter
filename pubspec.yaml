@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^3.0.1
   animated_text_kit: ^4.2.1
+  enhance_stepper: ^0.1.1
 
 
 dev_dependencies:

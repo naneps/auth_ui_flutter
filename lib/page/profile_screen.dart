@@ -4,7 +4,7 @@ import 'package:auth_ui_flutter/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../controllers/widget_awvat.dart';
+import '../widgets/widget_avatar.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);

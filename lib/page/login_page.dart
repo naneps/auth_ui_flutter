@@ -5,6 +5,9 @@ import 'package:auth_ui_flutter/page/profile_screen.dart';
 import 'package:auth_ui_flutter/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+// import 'ddlog.dart';
+import 'package:flutter/foundation.dart';
+import 'package:enhance_stepper/enhance_stepper.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -14,8 +17,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _formKey = GlobalKey<FormState>();
+  final StepperType _type = StepperType.vertical;
   bool showPass = true;
   AuthController authController = AuthController();
+  int groupValue = 0;
+  var selectedHakakses;
+  // List<Tuple2> tuples = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

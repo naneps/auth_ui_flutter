@@ -85,3 +85,14 @@ List<Map<String, dynamic>> dataUsers = [
   },
   {"telepon": '023', "password": '123'},
 ];
+
+List<Map<String, dynamic>> datahakAkses = [
+  {
+    "hakAkses": 'Asatidz',
+    "id": '3',
+  },
+  {
+    "hakAkses": 'Wali Santri',
+    "id": '4',
+  },
+];
