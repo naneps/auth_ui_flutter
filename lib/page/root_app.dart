@@ -47,7 +47,7 @@ class _RootAppState extends State<RootApp> {
       LineIcons.user
     ];
     return Container(
-      height: 90,
+      height: 80,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.white,

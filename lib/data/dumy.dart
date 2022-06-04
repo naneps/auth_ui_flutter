@@ -96,3 +96,87 @@ List<Map<String, dynamic>> datahakAkses = [
     "id": '4',
   },
 ];
+
+List<Map<String, String>> dataKategori = [
+  {
+    "kategori": 'Gitar',
+    "id": '1',
+  },
+  {
+    "kategori": 'Bass',
+    "id": '2',
+  },
+  {
+    "kategori": 'Keyboard',
+    "id": '3',
+  },
+  {
+    "kategori": 'Drum',
+    "id": '4',
+  },
+  {
+    "kategori": 'Piano',
+    "id": '5',
+  },
+  {
+    "kategori": 'Vocal',
+    "id": '6',
+  },
+  {
+    "kategori": 'Ukulele',
+    "id": '7',
+  },
+];
+
+var dataProduk = [
+  {
+    "id": '1',
+    "nama": 'Gitar',
+    "harga": 'Rp. 1.000.000',
+    "kategori": 'Gitar',
+    "gambar":
+        'https://images.unsplash.com/photo-1558098329-a11cff621064?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=390&q=80',
+  },
+  {
+    "id": '2',
+    "nama": 'Bass',
+    "harga": 'Rp. 1.000.000',
+    "kategori": 'Bass',
+    "gambar": 'assets/images/bass.jpg',
+  },
+  {
+    "id": '3',
+    "nama": 'Keyboard',
+    "harga": 'Rp. 1.000.000',
+    "kategori": 'Keyboard',
+    "gambar": 'assets/images/keyboard.jpg',
+  },
+  {
+    "id": '4',
+    "nama": 'Drum',
+    "harga": 'Rp. 1.000.000',
+    "kategori": 'Drum',
+    "gambar": 'assets/images/drum.jpg',
+  },
+  {
+    "id": '5',
+    "nama": 'Piano',
+    "harga": 'Rp. 1.000.000',
+    "kategori": 'Piano',
+    "gambar": 'assets/images/piano.jpg',
+  },
+  {
+    "id": '6',
+    "nama": 'Vocal',
+    "harga": 'Rp. 1.000.000',
+    "kategori": 'Vocal',
+    "gambar": 'assets/images/vocal.jpg',
+  },
+  {
+    "id": '7',
+    "nama": 'Ukulele',
+    "harga": 'Rp. 1.000.000',
+    "kategori": 'Ukulele',
+    "gambar": 'assets/images/ukulele.jpg',
+  },
+];
